@@ -1,6 +1,6 @@
 const express = require('express');
       bodyParser = require('body-parser');
-      ctrl = require('./controller') 
+      ctrl = require('./controllers') 
       massive = require('massive')
       require('dotenv').config();
 
@@ -15,7 +15,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 }).catch(err => console.log(err))
 
 app.get('/api/inventory', ctrl.getInventory)
-
+app.post('/api/product', ctrl.createProduct)
 
 
 
