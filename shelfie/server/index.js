@@ -14,7 +14,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
   app.set('db', dbInstance)
 }).catch(err => console.log(err))
 
-
+app.get('/api/inventory', ctrl.getInventory)
 
 
 
